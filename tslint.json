@@ -1,8 +1,9 @@
 {
   "extends": ["tslint:latest", "tslint-config-standard", "tslint-immutable/all"],
   "rules": {
-    "no-implicit-dependencies": [true, "dev"],
     "interface-name": [true, "never-prefix"],
-    "no-magic-numbers": true
+    "no-implicit-dependencies": [true, "dev"],
+    "no-magic-numbers": true,
+    "object-literal-sort-keys": false
   }
 }
