@@ -22,7 +22,6 @@
   ],
   "dependencies": {
     "got": "9.6.0",
-    "lodash-es": "4.17.11",
     "tough-cookie": "3.0.1"
   },
   "devDependencies": {
