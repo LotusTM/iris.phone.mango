@@ -70,5 +70,5 @@ export interface StatCallsParams {
   readonly filterParty: 'listall'
 }
 export interface StatsResponse {
-  readonly status: boolean
+  readonly status: string
 }
