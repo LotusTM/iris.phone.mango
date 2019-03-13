@@ -9,8 +9,11 @@
     "tslint.ignoreDefinitionFiles": false,
     "tslint.exclude": "**/node_modules/**/*",
     "cSpell.words": [
+        "abonent",
         "csrf",
         "definitelytyped",
+        "listall",
+        "perpage",
         "promisified"
     ]
 }
