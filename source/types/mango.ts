@@ -1,3 +1,7 @@
+export interface Reasons {
+  readonly [code: string]: string
+}
+
 export interface AuthParams {
   readonly username: string
   readonly password: string
@@ -69,6 +73,58 @@ export interface StatCallsParams {
   readonly callStatus: CallStatus
   readonly filterParty: 'listall'
 }
+
 export interface StatsResponse {
   readonly status: string
+  readonly hash: string
+  readonly data: ReadonlyArray<Call>
+}
+
+export interface PartyMember {
+  readonly id: number
+  readonly create_time_original: string
+  readonly create_time: number
+  readonly answer_time: number | undefined
+  readonly end_time: number
+  readonly end_reason: 'string'
+  readonly swt: string
+  readonly ida: string
+  readonly idb: string
+  readonly rcb: number | undefined
+  readonly hold_duration: number
+  readonly call_duration: number
+  readonly talk_duration: number
+  readonly dial_duration: number
+  readonly time_offset: number
+  readonly call_intercepted: boolean
+  readonly detail: number
+  readonly isAnswer: boolean
+  readonly count: number | undefined
+}
+
+export interface Member extends PartyMember {
+  readonly type: 'member'
+}
+
+export interface Group extends PartyMember {
+  readonly type: 'group'
+  readonly members: ReadonlyArray<Member>
+}
+
+export interface Call {
+  readonly time: number
+  readonly direction: string
+  readonly caller: string
+  readonly call_member_id: string | null
+  readonly dnis: string
+  readonly party: ReadonlyArray<Member | Group>
+  readonly duration: string
+  readonly contextId: string
+  readonly billingContextId: string
+  readonly time_offset: number
+  readonly clir: string
+  readonly clir_in: string
+  readonly callback_button_id: string
+  readonly vcdr_id: null
+  readonly cost: number
 }
