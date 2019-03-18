@@ -33,11 +33,11 @@ export const login = (options?: Mango.AuthParams): Promise<Mango.AuthResponse> =
 }
 
 export const createSession = (options: Mango.AuthResponse) => {
-  const body = {
+  const body: Mango.CreateSessionParams = {
     auth_token: options.auth_token,
     refresh_token: options.refresh_token,
     username: '',
     app: options.app
   }
-  return client.post(CREATE_SESSION_URL, { body: querystring.stringify(body as Mango.CreateSessionParams) })
+  return client.post(CREATE_SESSION_URL, { body: querystring.stringify(body) })
 }
