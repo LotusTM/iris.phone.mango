@@ -1,9 +1,9 @@
 import got from 'got'
 import querystring from 'querystring'
 import { CookieJar } from 'tough-cookie'
-import { name, version } from './../package.json'
+import { name, version } from '../../package.json'
 
-import * as Mango from './types/mango'
+import * as Mango from '../types/mango'
 
 const AUTH_URL = 'https://auth.mango-office.ru/auth/vpbx'
 const CREATE_SESSION_URL = 'https://lk.mango-office.ru/auth/create-session'
