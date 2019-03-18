@@ -1,4 +1,4 @@
-import { DateTime, Duration } from 'luxon'
+import { DateTime } from 'luxon'
 import { reasons } from '../mango/reasons'
 import { direction, memberType } from './normalize'
 
@@ -7,7 +7,7 @@ import * as Mango from '../types/mango'
 
 const MOSCOW_TIMEZONE_OFFSET = 180
 
-const convertPartyMember = (member: Mango.Member | Mango.Group) => {
+const convertPartyMember = (member: Mango.Member | Mango.Group): Iris.Member => {
   const zone = (member.time_offset === MOSCOW_TIMEZONE_OFFSET) ? 'Europe/Moscow' : 'UTC'
   return {
     type: memberType(member.type),
@@ -49,7 +49,8 @@ export const convertCall = (call: Mango.Call): Iris.Call => {
     // https://en.wikipedia.org/wiki/Dialed_Number_Identification_Service
     line: call.dnis,
     member: call.party.map(convertPartyMember),
-    duration: Duration.fromObject({ seconds: Number(call.duration) }).toFormat('hh:mm:ss'),
+    // duration: Duration.fromObject({ seconds: Number(call.duration) }).toFormat('hh:mm:ss'),
+    duration: Number(call.duration),
     // contextId: Number(call.contextId),
     // billingContextId:	Number(call.billingContextId),
     // time_offset:	Number(call.time_offset),
