@@ -1,7 +1,3 @@
-export interface Reasons {
-  readonly [code: string]: string
-}
-
 export interface AuthParams {
   readonly username: string
   readonly password: string
@@ -127,4 +123,8 @@ export interface Call {
   readonly callback_button_id: string
   readonly vcdr_id: null
   readonly cost: number
+}
+
+export interface CallEndReasons {
+  readonly [code: string]: string
 }

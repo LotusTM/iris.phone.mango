@@ -4,7 +4,7 @@ export interface Call {
   readonly caller: string
   readonly line: string
   readonly member: ReadonlyArray<Member>
-  readonly duration: string
+  readonly duration: number
   readonly callback_id: number
   readonly cost: number
 }
