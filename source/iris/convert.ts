@@ -1,5 +1,5 @@
 import { DateTime, Duration } from 'luxon'
-import { reasons } from '../reasons'
+import { reasons } from '../mango/reasons'
 import { direction, memberType } from './normalize'
 
 import * as Iris from '../types/iris'
@@ -38,7 +38,7 @@ const convertPartyMember = (member: Mango.Member | Mango.Group) => {
   }
 }
 
-export const convertCall = (call: Mango.Call) => {
+export const convertCall = (call: Mango.Call): Iris.Call => {
   const zone = (call.time_offset === MOSCOW_TIMEZONE_OFFSET) ? 'Europe/Moscow' : 'UTC'
   return {
     date: DateTime.fromSeconds(call.time, { zone }).toISO(),
