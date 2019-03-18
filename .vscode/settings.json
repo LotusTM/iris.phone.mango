@@ -7,13 +7,15 @@
     },
     "typescript.referencesCodeLens.enabled": true,
     "tslint.ignoreDefinitionFiles": false,
-    "tslint.exclude": "**/node_modules/**/*",
     "cSpell.words": [
         "abonent",
+        "clir",
         "csrf",
         "definitelytyped",
+        "dnis",
         "listall",
         "perpage",
-        "promisified"
+        "promisified",
+        "vcdr"
     ]
 }
