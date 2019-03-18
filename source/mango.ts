@@ -1,6 +1,6 @@
 import got from 'got'
 import { name, version } from './../package.json'
-import { createSession, login } from './auth'
+import { createSession, login } from './mango/auth'
 
 import * as Mango from './types/mango'
 

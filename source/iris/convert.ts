@@ -2,6 +2,7 @@ import { DateTime, Duration } from 'luxon'
 import { reasons } from '../reasons'
 import { direction, memberType } from './normalize'
 
+import * as Iris from '../types/iris'
 import * as Mango from '../types/mango'
 
 const MOSCOW_TIMEZONE_OFFSET = 180

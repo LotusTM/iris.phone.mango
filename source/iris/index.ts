@@ -1,6 +1,5 @@
 import { convertCall } from './convert'
 
-import * as Mango from './../types/mango'
-import * as Iris from './types/iris'
+import * as Mango from '../types/mango'
 
-export const convert = (calls: ReadonlyArray<Mango.Call>): ReadonlyArray<Iris.Call> => calls.map(convertCall)
+export const convert = (calls: ReadonlyArray<Mango.Call>) => calls.map(convertCall)
